@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/timelineFragment"
+        android:icon="@drawable/ic_timeline"
+        android:orderInCategory="1"
+        android:title="Timeline"
+        android:iconTint="@color/white"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/myMarketFragment"
+        android:icon="@drawable/ic_mymarket"
+        android:orderInCategory="2"
+        android:title="My Market"
+        android:iconTint="@color/white"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/myFaresFragment"
+        android:icon="@drawable/ic_myfares"
+        android:orderInCategory="3"
+        android:title="My Fares"
+        android:iconTint="@color/white"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/settingsOthersFragment"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Settings"
+        android:iconTint="@color/white"
+        app:showAsAction="always" />
+</menu>

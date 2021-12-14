@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/myFaresFragment"
+        android:name="com.example.bazaarandroid.fragments.MyFaresFragment"
+        android:label="fragment_my_fares"
+        tools:layout="@layout/fragment_my_fares" >
+        <action
+            android:id="@+id/action_myFaresFragment_to_myTimelineFragment"
+            app:destination="@id/timelineFragment" />
+        <action
+            android:id="@+id/action_myFaresFragment_to_myMarketFragment"
+            app:destination="@id/myMarketFragment" />
+        <action
+            android:id="@+id/action_myFaresFragment_to_settingsOwnerFragment"
+            app:destination="@id/settingsOwnerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/myMarketFragment"
+        android:name="com.example.bazaarandroid.fragments.MyMarketFragment"
+        android:label="fragment_my_market"
+        tools:layout="@layout/fragment_my_market" >
+        <action
+            android:id="@+id/action_myMarketFragment_to_myTimelineFragment"
+            app:destination="@id/timelineFragment" />
+        <action
+            android:id="@+id/action_myMarketFragment_to_myFaresFragment"
+            app:destination="@id/timelineFragment" />
+        <action
+            android:id="@+id/action_myMarketFragment_to_settingsOwnerFragment"
+            app:destination="@id/settingsOwnerFragment" />
+        <action
+            android:id="@+id/action_myMarketFragment_to_detailPageScretchFragment"
+            app:destination="@id/detailPageScretchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/timelineFragment"
+        android:name="com.example.bazaarandroid.fragments.TimelineFragment"
+        android:label="fragment_timeline"
+        tools:layout="@layout/fragment_timeline" >
+        <action
+            android:id="@+id/action_timelineFragment_to_myFaresFragment"
+            app:destination="@id/myFaresFragment" />
+        <action
+            android:id="@+id/action_timelineFragment_to_myMarketFragment"
+            app:destination="@id/myMarketFragment" />
+
+        <action
+            android:id="@+id/action_timelineFragment_to_settingsOwnerFragment"
+            app:destination="@id/settingsOwnerFragment" />
+        <action
+            android:id="@+id/action_timelineFragment_to_settingsOthersFragment"
+            app:destination="@id/settingsOthersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.bazaarandroid.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_timelineFragment"
+            app:destination="@id/timelineFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_passwordFragment"
+            app:destination="@id/passwordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.bazaarandroid.fragments.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_timelineFragment"
+            app:destination="@id/timelineFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordFragment"
+        android:name="com.example.bazaarandroid.fragments.PasswordFragment"
+        android:label="fragment_password"
+        tools:layout="@layout/fragment_password" />
+    <fragment
+        android:id="@+id/settingsOwnerFragment"
+        android:name="com.example.bazaarandroid.fragments.SettingsOwnerFragment"
+        android:label="fragment_settings_owner"
+        tools:layout="@layout/fragment_settings_owner" />
+    <fragment
+        android:id="@+id/settingsOthersFragment"
+        android:name="com.example.bazaarandroid.fragments.SettingsOthersFragment"
+        android:label="fragment_settings_others"
+        tools:layout="@layout/fragment_settings_others" />
+    <fragment
+        android:id="@+id/detailPageScretchFragment"
+        android:name="com.example.bazaarandroid.fragments.DetailPageScretchFragment"
+        android:label="fragment_detail_page_scretch"
+        tools:layout="@layout/fragment_detail_page_scretch" />
+</navigation>
