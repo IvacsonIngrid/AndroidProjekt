@@ -8,17 +8,21 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.bazaarandroid.MyApplication
 import com.example.bazaarandroid.model.LoginRequest
+import com.example.bazaarandroid.model.MyUser
 import com.example.bazaarandroid.model.User
 import com.example.bazaarandroid.repository.Repository
+import com.example.bazaarandroid.utils.Constants.EMAIL
+import com.example.bazaarandroid.utils.Constants.ERROR
+import com.example.bazaarandroid.utils.Constants.PHONE_NUMBER
 import com.example.bazaarandroid.utils.SessionManager
 import kotlinx.coroutines.launch
 
 class LoginViewModel(val context: Context, val repository: Repository) : ViewModel() {
     var token: MutableLiveData<String> = MutableLiveData()
-    var user = MutableLiveData<User>()
+    var user = MutableLiveData<MyUser>()
 
     init {
-        user.value = User()
+        user.value = MyUser()
     }
 
 //    fun login() {
@@ -43,9 +47,14 @@ class LoginViewModel(val context: Context, val repository: Repository) : ViewMod
             val result = repository.login(request)
             MyApplication.token = result.token
             token.value = result.token
+
+            EMAIL = result.email
+            PHONE_NUMBER = result.phone_number
+
             Log.d("xxx", "MyApplication - token:  ${MyApplication.token}")
         } catch (e: Exception) {
             Log.d("xxx", "LoginViewModel - exception: ${e.toString()}")
+            ERROR = 1
         }
     }
 }

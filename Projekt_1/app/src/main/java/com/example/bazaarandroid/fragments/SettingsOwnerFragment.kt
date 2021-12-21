@@ -22,4 +22,8 @@ class SettingsOwnerFragment : Fragment() {
         tv.text = USER_NAME
         return inf
     }
+
+    fun newInstance(): SettingsOwnerFragment? {
+        return SettingsOwnerFragment()
+    }
 }

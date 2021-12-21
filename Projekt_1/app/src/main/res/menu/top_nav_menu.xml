@@ -3,29 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/text_menu"
-        android:icon="@drawable/ic_product"
-        app:showAsAction="always"
-        android:title="Bazaar"/>
-
-    <item
         android:id="@+id/searchPanel"
         android:icon="@drawable/ic_search"
         android:title="Search"
         android:iconTint="@color/white"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/filterFragment"
         android:icon="@drawable/ic_filter"
         android:title="Filter"
         android:iconTint="@color/white"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/settingsOwnerFragment"
         android:icon="@drawable/ic_baseline_account_circle_24"
         android:title="Settings"
         android:iconTint="@color/white"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
 </menu>

@@ -63,7 +63,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.bazaarandroid.fragments.LoginFragment"
-        android:label="fragment_login"
+        android:label=""
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_timelineFragment"
@@ -79,7 +79,7 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.bazaarandroid.fragments.RegisterFragment"
-        android:label="fragment_register"
+        android:label=""
         tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_registerFragment_to_timelineFragment"
@@ -91,7 +91,7 @@
     <fragment
         android:id="@+id/passwordFragment"
         android:name="com.example.bazaarandroid.fragments.PasswordFragment"
-        android:label="fragment_password"
+        android:label=""
         tools:layout="@layout/fragment_password" />
     <fragment
         android:id="@+id/settingsOwnerFragment"

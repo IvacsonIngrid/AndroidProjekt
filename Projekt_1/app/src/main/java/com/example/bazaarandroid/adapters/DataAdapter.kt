@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide
 import com.example.bazaarandroid.R
 import com.example.bazaarandroid.model.Product
 import com.example.bazaarandroid.utils.Constants.PAGE
+import com.example.bazaarandroid.utils.Constants.USER_NAME
 
 class DataAdapter(
     private var list: ArrayList<Product>,
@@ -96,7 +97,7 @@ class DataAdapter(
         //ORDER NOW/ACTIVE
         if (PAGE == "timeline") {
             Log.d("xxx", "DataAdapter / PAGE := $PAGE")
-            if (currentItem.username == "manyi") //manyi helyett USER_NAME kell, ha lesz termekem
+            if (currentItem.username == USER_NAME)
             {
                 holder.button_order.text = "Active"
             }
@@ -104,6 +105,10 @@ class DataAdapter(
             {
                 holder.button_order.text = "Oder now"
             }
+        }
+        if (PAGE == "mymarket")
+        {
+            holder.button_order.text = "Active"
         }
         //----------------
     }

@@ -1,10 +1,23 @@
 package com.example.bazaarandroid.model
 
 import com.squareup.moshi.JsonClass
+import java.math.BigInteger
 
 //import com.google.gson.annotations.SerializedName
 
-data class User(var username: String="", var password: String="", val email: String="", var phone_number: String="")
+data class User(
+    var username: String="",
+    var password: String="",
+    var email: String="",
+    var phone_number: String=""
+)
+
+data class MyUser(
+    var username: String="",
+    var password: String="",
+    var email: String="",
+    var phone_number: Long = 7111111111
+)
 
 @JsonClass(generateAdapter = true)
 data class LoginRequest (
@@ -12,14 +25,29 @@ data class LoginRequest (
     var password: String
 )
 
+@JsonClass(generateAdapter = true) //amit beadok
+data class RegisterRequest (
+    var username: String,
+    var password: String,
+    var email: String,
+    var phone_number: Long
+)
+
 @JsonClass(generateAdapter = true)
 data class LoginResponse (
     var username: String,
     var email: String,
-    var phone_number: Int,
+    var phone_number: Long,
     var token: String,
     var creation_time: Long,
     var refresh_time: Long
+)
+
+@JsonClass(generateAdapter = true) //amit visszaterit
+data class RegisterResponse (
+    var code: Int,
+    var message: String,
+    var creation_time: Long
 )
 
 /*@JsonClass(generateAdapter = true)
