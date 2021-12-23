@@ -23,7 +23,6 @@ class TimelineFragment : Fragment(), DataAdapter.OnItemClickListener, DataAdapte
     lateinit var listViewModel: TimelineViewModel
     private lateinit var recycler_view: RecyclerView
     private lateinit var adapter: DataAdapter
-    //private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,8 +39,6 @@ class TimelineFragment : Fragment(), DataAdapter.OnItemClickListener, DataAdapte
     ): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_timeline, container, false)
-
-        //viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
         recycler_view = view.findViewById(R.id.recycler_view)
         setupRecyclerView()
@@ -68,16 +65,12 @@ class TimelineFragment : Fragment(), DataAdapter.OnItemClickListener, DataAdapte
     }
 
     override fun onItemLongClick(position: Int) {
-//        TODO("Not yet implemented")
+        listViewModel.currentPosition = position
+        findNavController().navigate(R.id.action_timelineFragment_to_settingsOthersFragment)
     }
 
     override fun onItemClick(position: Int) {
-//        TODO("Not yet implemented")
+        listViewModel.currentPosition = position
+        var v = findNavController().navigate(R.id.action_timelineFragment_to_otherDetailProductFragment)
     }
-
-    /*override fun onItemClick(position: Int) {
-        //viewModel.currentPosition = position
-        //findNavController().navigate(R.id.action_timelineFragment_to_settingsOthersFragment)
-        Log.d("xxx", "AdapterPosition: $position")
-    }*/
 }

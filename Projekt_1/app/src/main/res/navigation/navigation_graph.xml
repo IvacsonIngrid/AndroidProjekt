@@ -24,7 +24,7 @@
     <fragment
         android:id="@+id/myMarketFragment"
         android:name="com.example.bazaarandroid.fragments.MyMarketFragment"
-        android:label="fragment_my_market"
+        android:label="My Market"
         tools:layout="@layout/fragment_my_market" >
         <action
             android:id="@+id/action_myMarketFragment_to_myTimelineFragment"
@@ -38,12 +38,15 @@
         <action
             android:id="@+id/action_myMarketFragment_to_detailPageScretchFragment"
             app:destination="@id/detailPageScretchFragment" />
+        <action
+            android:id="@+id/action_myMarketFragment_to_myDetailProductFragment"
+            app:destination="@id/myDetailProductFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/timelineFragment"
         android:name="com.example.bazaarandroid.fragments.TimelineFragment"
-        android:label="fragment_timeline"
+        android:label="Bazaar"
         tools:layout="@layout/fragment_timeline" >
         <action
             android:id="@+id/action_timelineFragment_to_myFaresFragment"
@@ -58,6 +61,9 @@
         <action
             android:id="@+id/action_timelineFragment_to_settingsOthersFragment"
             app:destination="@id/settingsOthersFragment" />
+        <action
+            android:id="@+id/action_timelineFragment_to_otherDetailProductFragment"
+            app:destination="@id/otherDetailProductFragment" />
     </fragment>
 
     <fragment
@@ -96,16 +102,36 @@
     <fragment
         android:id="@+id/settingsOwnerFragment"
         android:name="com.example.bazaarandroid.fragments.SettingsOwnerFragment"
-        android:label="fragment_settings_owner"
+        android:label="Settings"
         tools:layout="@layout/fragment_settings_owner" />
     <fragment
         android:id="@+id/settingsOthersFragment"
         android:name="com.example.bazaarandroid.fragments.SettingsOthersFragment"
-        android:label="fragment_settings_others"
+        android:label="Profile"
         tools:layout="@layout/fragment_settings_others" />
     <fragment
         android:id="@+id/detailPageScretchFragment"
         android:name="com.example.bazaarandroid.fragments.DetailPageScretchFragment"
-        android:label="fragment_detail_page_scretch"
-        tools:layout="@layout/fragment_detail_page_scretch" />
+        android:label="Create your fare"
+        tools:layout="@layout/fragment_detail_page_scretch">
+        <action
+            android:id="@+id/action_detailPageScretchFragment_to_myDetailProductFragment"
+            app:destination="@id/myDetailProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myDetailProductFragment"
+        android:name="com.example.bazaarandroid.fragments.MyDetailProductFragment"
+        android:label="Product detail"
+        tools:layout="@layout/fragment_my_detail_product">
+        <action
+            android:id="@+id/action_myDetailProductFragment_to_detailPageScretchFragment"
+            app:destination="@id/detailPageScretchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/otherDetailProductFragment"
+        android:name="com.example.bazaarandroid.fragments.OtherDetailProductFragment"
+        android:label="Product detail"
+        tools:layout="@layout/fragment_other_detail_product">
+    </fragment>
 </navigation>

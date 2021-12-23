@@ -13,6 +13,7 @@ import com.example.bazaarandroid.model.User
 import com.example.bazaarandroid.repository.Repository
 import com.example.bazaarandroid.utils.Constants.EMAIL
 import com.example.bazaarandroid.utils.Constants.ERROR
+import com.example.bazaarandroid.utils.Constants.PASSWORD
 import com.example.bazaarandroid.utils.Constants.PHONE_NUMBER
 import com.example.bazaarandroid.utils.SessionManager
 import kotlinx.coroutines.launch

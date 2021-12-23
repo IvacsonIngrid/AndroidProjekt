@@ -17,4 +17,12 @@
         <item>pc</item>
     </string-array>
 
+    <string-array name="status">
+        <item>OPEN</item>
+        <item>INCOMING</item>
+        <item>DECLINED</item>
+        <item>ACCEPTED</item>
+        <item>DELIVERED</item>
+    </string-array>
+
 </resources>

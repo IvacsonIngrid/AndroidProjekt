@@ -3,7 +3,7 @@ package com.example.bazaarandroid.model
 import com.squareup.moshi.JsonClass
 
 data class MyProduct(
-    var title: String = "",
+    var title: String = "rossz",
     var description: String = "",
     var price_per_unit: String = "",
     var units: String = "",
@@ -32,7 +32,31 @@ data class Product(val rating: Double,
 )
 
 @JsonClass(generateAdapter = true)
+data class Orders(val order_id: String,
+                   val username: String,
+                   val status: String,
+                   val owner_username: String,
+                   val price_per_unit: String,
+                   val units: String,
+                   val description: String,
+                   val title: String,
+                   val creation_time: String,
+                   val images: List<Image>,
+                   val message:List<Message>
+)
+
+@JsonClass(generateAdapter = true)
+data class Message(val username: String,
+                  val message_id: String,
+                  val message: String,
+                  val creation_time: Long
+)
+
+@JsonClass(generateAdapter = true)
 data class ProductResponse(val item_count: Int, val products: List<Product>, val timestamp: Long)
+
+@JsonClass(generateAdapter = true)
+data class ProductSalesResponse(val item_count: Int, val orders: List<Orders>, val timestamp: Long)
 
 @JsonClass(generateAdapter = true)//beadom
 data class AddProductRequest(
@@ -59,5 +83,15 @@ data class AddProductResponse(
     var units: String,
     var rating: String,
     var creation_time: String,
+    var price_type: String
+)
+
+@JsonClass(generateAdapter = true)
+data class UpdateProduct(
+    var price_per_unit: String,
+    var is_active: Boolean,
+    var title: String,
+    var rating: String,
+    var amount_type: String,
     var price_type: String
 )

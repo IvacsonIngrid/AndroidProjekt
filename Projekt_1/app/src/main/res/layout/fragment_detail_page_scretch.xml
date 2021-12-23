@@ -65,12 +65,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_title"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="300dp"
             android:layout_marginEnd="30dp"
             app:helperText="0/30"
+            app:helperTextTextColor="@color/red"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -82,12 +84,14 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_price"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="400dp"
             android:layout_marginEnd="30dp"
             app:helperText="0/10"
+            app:helperTextTextColor="@color/red"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -119,12 +123,14 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_amount"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="500dp"
             android:layout_marginEnd="30dp"
             app:helperText="0/10"
+            app:helperTextTextColor="@color/red"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -156,12 +162,14 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_description"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="600dp"
             android:layout_marginEnd="30dp"
             app:helperText="0/150"
+            app:helperTextTextColor="@color/red"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -191,6 +199,7 @@
             android:layout_marginTop="750dp"
             android:layout_marginEnd="30dp"
             android:hint="neve"
+            android:focusable="false"
             app:endIconCheckable="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -200,7 +209,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_check"
-                android:drawableTint="#00BCD4" />
+                android:drawableTint="#00BCD4"
+                android:focusable="false"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -210,6 +220,7 @@
             android:layout_marginTop="820dp"
             android:layout_marginEnd="30dp"
             android:hint="email"
+            android:focusable="false"
             app:endIconCheckable="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -219,7 +230,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_check"
-                android:drawableTint="#00BCD4" />
+                android:drawableTint="#00BCD4"
+                android:focusable="false"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -229,6 +241,7 @@
             android:layout_marginTop="890dp"
             android:layout_marginEnd="30dp"
             android:hint="szama"
+            android:focusable="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:startIconCheckable="false">
@@ -238,7 +251,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_check"
-                android:drawableTint="#00BCD4" />
+                android:drawableTint="#00BCD4"
+                android:focusable="false"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button

@@ -77,6 +77,8 @@ class MyMarketFragment : Fragment(), DataAdapter.OnItemClickListener, DataAdapte
     }
 
     override fun onItemClick(position: Int) {
-//        TODO("Not yet implemented")
+        listViewModel.currentPosition = position
+        Log.d("xxx", "Aktualis pozicio: $position")
+        findNavController().navigate(R.id.action_myMarketFragment_to_myDetailProductFragment)
     }
 }

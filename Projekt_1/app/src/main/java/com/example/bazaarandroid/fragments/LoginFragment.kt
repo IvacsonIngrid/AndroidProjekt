@@ -19,6 +19,7 @@ import kotlinx.coroutines.launch
 import com.example.bazaarandroid.utils.Constants.USER_NAME
 import android.view.*
 import com.example.bazaarandroid.utils.Constants.ERROR
+import com.example.bazaarandroid.utils.Constants.PASSWORD
 import com.google.android.material.textfield.TextInputLayout
 
 
@@ -40,36 +41,39 @@ class LoginFragment : Fragment() {
         val layout = inflater.inflate(R.layout.fragment_login, container, false)
         Log.d("xxx", "Tovabb:")
 
+        print("Ez csak proba")
 
         val editText1: TextInputEditText = layout.findViewById(R.id.textInputEdit_name)
-        Log.d("xxx", "name:  ${editText1.text.toString()}")
+        Log.i("xxx", "name:  ${editText1.text.toString()}")
 
         val helperText: TextInputLayout = layout.findViewById(R.id.textInputLayout_name)
-        Log.d("xxx", "name:  $helperText")
+        Log.i("xxx", "name:  $helperText")
 
         val editText2: TextInputEditText = layout.findViewById(R.id.textInputEdit_password)
-        Log.d("xxx", "name:  ${editText2.text.toString()}")
+        Log.i("xxx", "name:  ${editText2.text.toString()}")
 
         val button: Button = layout.findViewById(R.id.button_login)
         button.setOnClickListener {
             loginViewModel.user.value.let {
                 if (it != null) {
                     it.username = editText1.text.toString()
-                    Log.d("xxx", "Name -> String:")
+                    Log.i("xxx", "Name -> String:")
 
                     //eltarolom, hogy ki lepett be
                     USER_NAME = editText1.text.toString()
                 }
                 if (it != null) {
                     it.password = editText2.text.toString()
-                    Log.d("xxx", "Password -> String:")
+                    Log.i("xxx", "Password -> String:")
+
+                    PASSWORD = editText2.text.toString()
                 }
             }
             lifecycleScope.launch {
                 loginViewModel.login()
                 if (ERROR != 1)
                 {
-                    Log.d("xxx", "Meg volt a LOGIN:")
+                    Log.i("xxx", "Meg volt a LOGIN:")
                 }
                 else
                 {

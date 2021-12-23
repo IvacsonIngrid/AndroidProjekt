@@ -11,9 +11,13 @@ import com.example.bazaarandroid.utils.Constants.NUMB_PRODUCTS
 import com.example.bazaarandroid.utils.SessionManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import androidx.lifecycle.LiveData
+import com.example.bazaarandroid.model.ProductResponse
+
 
 class TimelineViewModel(private val repository: Repository) : ViewModel() {
     var products: MutableLiveData<List<Product>> = MutableLiveData()
+    var currentPosition: Int = 0
 
     init{
         Log.d("xxx", "ListViewModel constructor - Token: ${MyApplication.token}")
@@ -30,14 +34,22 @@ class TimelineViewModel(private val repository: Repository) : ViewModel() {
                 //tarolom h osszesen hany termek van
                 NUMB_PRODUCTS = result.item_count
 
-                //most
-                //ITT KELLENE RENDEZZEM
-                //------------
+                //settings-nek
+
             }catch(e: Exception){
                 Log.d("xxx", "ListViewModel exception: ${e.toString()}")
             }
         }
     }
 
+    fun getItem(): Product {
+        Log.d("xxx", "getItem is jo?")
+        return products.value!!?.get(currentPosition)
+    }
 
+    fun getName(): Product {
+        Log.d("xxx", "getName is jo?")
+        return products.value!![currentPosition]
+
+    }
 }

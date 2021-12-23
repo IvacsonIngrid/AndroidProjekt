@@ -8,6 +8,7 @@ import com.example.bazaarandroid.MyApplication
 import com.example.bazaarandroid.model.*
 import com.example.bazaarandroid.repository.Repository
 import com.example.bazaarandroid.utils.Constants
+import com.example.bazaarandroid.utils.Constants.ID_PRODUCT
 
 class DetailScretchViewModel (val context: Context, val repository: Repository) : ViewModel() {
     var token: MutableLiveData<String> = MutableLiveData()
@@ -31,6 +32,8 @@ class DetailScretchViewModel (val context: Context, val repository: Repository) 
         try {
             val result = repository.addProduct(MyApplication.token, request)
             Log.d("xxx", "${result.creation}")
+            ID_PRODUCT = result.product_id
+            Log.d("xxx", "A TERMEK ID: $ID_PRODUCT")
 
         } catch (e: Exception) {
             Log.d("xxx", "DetailScretchViewModel - exception: ${e.toString()}")

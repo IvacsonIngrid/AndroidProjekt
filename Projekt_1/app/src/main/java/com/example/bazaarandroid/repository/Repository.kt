@@ -26,4 +26,16 @@ class Repository {
         return RetrofitInstance.api.addProduct(token, request.title, request.description, request.price_per_unit,
         request.units, request.is_active, request.rating, request.amount_type, request.price_type)
     }
+
+    suspend fun getProductLast(token: String, filter: String): AddProductResponse {
+        return RetrofitInstance.api.getProductLast(token, filter)
+    }
+
+    suspend fun update(token: String, request: RegisterRequest): RegisterResponse {
+        return RetrofitInstance.api.update(token, request)
+    }
+
+    suspend fun getOrders(token: String, limit: Int): ProductSalesResponse {
+        return RetrofitInstance.api.getOrders(token, limit)
+    }
 }

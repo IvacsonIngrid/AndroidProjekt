@@ -47,7 +47,8 @@ data class LoginResponse (
 data class RegisterResponse (
     var code: Int,
     var message: String,
-    var creation_time: Long
+    var creation_time: Long,
+    var token: String
 )
 
 /*@JsonClass(generateAdapter = true)

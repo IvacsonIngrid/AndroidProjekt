@@ -14,6 +14,7 @@ import kotlinx.coroutines.launch
 class MyMarketViewModel (private val repository: Repository) : ViewModel() {
     var products: MutableLiveData<List<Product>> = MutableLiveData()
     var product_my: ArrayList<Product> = ArrayList()
+    var currentPosition: Int = 0
 
     init{
         Log.d("xxx", "MyMarketViewModel constructor - Token: ${MyApplication.token}")
@@ -42,5 +43,10 @@ class MyMarketViewModel (private val repository: Repository) : ViewModel() {
                 Log.d("xxx", "MyMarketViewModel exception: ${e.toString()}")
             }
         }
+    }
+
+    fun getItem(): Product {
+        Log.d("xxx", "getItem is jo? Merete a listanak: ${product_my.size}, a pozicio meg: $currentPosition")
+        return product_my[currentPosition]
     }
 }
